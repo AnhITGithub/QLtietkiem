@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstblSotietkiem" targetNamespace="http://tempuri.org/dstblSotietkiem.xsd" xmlns:mstns="http://tempuri.org/dstblSotietkiem.xsd" xmlns="http://tempuri.org/dstblSotietkiem.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstblSotietkiem" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="dstblSotietkiem" msprop:Generator_DataSetName="dstblSotietkiem">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblSotietkiem" msprop:Generator_RowEvHandlerName="tblSotietkiemRowChangeEventHandler" msprop:Generator_RowDeletedName="tblSotietkiemRowDeleted" msprop:Generator_RowDeletingName="tblSotietkiemRowDeleting" msprop:Generator_RowEvArgName="tblSotietkiemRowChangeEvent" msprop:Generator_TablePropName="tblSotietkiem" msprop:Generator_RowChangedName="tblSotietkiemRowChanged" msprop:Generator_RowChangingName="tblSotietkiemRowChanging" msprop:Generator_TableClassName="tblSotietkiemDataTable" msprop:Generator_RowClassName="tblSotietkiemRow" msprop:Generator_TableVarName="tabletblSotietkiem" msprop:Generator_UserTableName="tblSotietkiem">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sMaSoTK" msprop:Generator_ColumnPropNameInRow="sMaSoTK" msprop:Generator_ColumnPropNameInTable="sMaSoTKColumn" msprop:Generator_ColumnVarNameInTable="columnsMaSoTK" msprop:Generator_UserColumnName="sMaSoTK" type="xs:string" minOccurs="0" />
+              <xs:element name="sMaKH" msprop:Generator_ColumnPropNameInRow="sMaKH" msprop:Generator_ColumnPropNameInTable="sMaKHColumn" msprop:Generator_ColumnVarNameInTable="columnsMaKH" msprop:Generator_UserColumnName="sMaKH" type="xs:string" minOccurs="0" />
+              <xs:element name="sTenKH" msprop:Generator_ColumnPropNameInRow="sTenKH" msprop:Generator_ColumnPropNameInTable="sTenKHColumn" msprop:Generator_ColumnVarNameInTable="columnsTenKH" msprop:Generator_UserColumnName="sTenKH" type="xs:string" minOccurs="0" />
+              <xs:element name="sMaLoaiTK" msprop:Generator_ColumnPropNameInRow="sMaLoaiTK" msprop:Generator_ColumnPropNameInTable="sMaLoaiTKColumn" msprop:Generator_ColumnVarNameInTable="columnsMaLoaiTK" msprop:Generator_UserColumnName="sMaLoaiTK" type="xs:string" minOccurs="0" />
+              <xs:element name="sTenLoaiTK" msprop:Generator_ColumnPropNameInRow="sTenLoaiTK" msprop:Generator_ColumnPropNameInTable="sTenLoaiTKColumn" msprop:Generator_ColumnVarNameInTable="columnsTenLoaiTK" msprop:Generator_UserColumnName="sTenLoaiTK" type="xs:string" minOccurs="0" />
+              <xs:element name="sSotiengui" msprop:Generator_ColumnPropNameInRow="sSotiengui" msprop:Generator_ColumnPropNameInTable="sSotienguiColumn" msprop:Generator_ColumnVarNameInTable="columnsSotiengui" msprop:Generator_UserColumnName="sSotiengui" type="xs:string" minOccurs="0" />
+              <xs:element name="sNgaygui" msprop:Generator_ColumnPropNameInRow="sNgaygui" msprop:Generator_ColumnPropNameInTable="sNgayguiColumn" msprop:Generator_ColumnVarNameInTable="columnsNgaygui" msprop:Generator_UserColumnName="sNgaygui" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
