@@ -130,7 +130,7 @@ namespace QLtietkiem
             this.bt_clear.Margin = new System.Windows.Forms.Padding(4);
             this.bt_clear.Name = "bt_clear";
             this.bt_clear.Size = new System.Drawing.Size(113, 36);
-            this.bt_clear.TabIndex = 12;
+            this.bt_clear.TabIndex = 6;
             this.bt_clear.Text = "&REFRESH";
             this.bt_clear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_clear.UseVisualStyleBackColor = true;
@@ -143,7 +143,7 @@ namespace QLtietkiem
             this.bt_them.Margin = new System.Windows.Forms.Padding(4);
             this.bt_them.Name = "bt_them";
             this.bt_them.Size = new System.Drawing.Size(100, 37);
-            this.bt_them.TabIndex = 0;
+            this.bt_them.TabIndex = 5;
             this.bt_them.Text = "&THÊM";
             this.bt_them.UseVisualStyleBackColor = true;
             this.bt_them.Click += new System.EventHandler(this.bt_them_Click);
@@ -155,7 +155,7 @@ namespace QLtietkiem
             this.Phantram.Margin = new System.Windows.Forms.Padding(4);
             this.Phantram.Name = "Phantram";
             this.Phantram.Size = new System.Drawing.Size(187, 26);
-            this.Phantram.TabIndex = 7;
+            this.Phantram.TabIndex = 3;
             // 
             // label5
             // 
@@ -186,7 +186,7 @@ namespace QLtietkiem
             this.TenLoaiTK.Margin = new System.Windows.Forms.Padding(4);
             this.TenLoaiTK.Name = "TenLoaiTK";
             this.TenLoaiTK.Size = new System.Drawing.Size(187, 26);
-            this.TenLoaiTK.TabIndex = 5;
+            this.TenLoaiTK.TabIndex = 2;
             // 
             // label3
             // 
@@ -206,7 +206,7 @@ namespace QLtietkiem
             this.MaLoaiTK.Margin = new System.Windows.Forms.Padding(4);
             this.MaLoaiTK.Name = "MaLoaiTK";
             this.MaLoaiTK.Size = new System.Drawing.Size(187, 26);
-            this.MaLoaiTK.TabIndex = 3;
+            this.MaLoaiTK.TabIndex = 1;
             // 
             // label2
             // 
@@ -299,7 +299,7 @@ namespace QLtietkiem
             this.Huytim.Margin = new System.Windows.Forms.Padding(4);
             this.Huytim.Name = "Huytim";
             this.Huytim.Size = new System.Drawing.Size(100, 28);
-            this.Huytim.TabIndex = 14;
+            this.Huytim.TabIndex = 9;
             this.Huytim.Text = "HỦY";
             this.Huytim.UseVisualStyleBackColor = true;
             this.Huytim.Click += new System.EventHandler(this.Huytim_Click);
@@ -332,7 +332,7 @@ namespace QLtietkiem
             this.Timten.Margin = new System.Windows.Forms.Padding(4);
             this.Timten.Name = "Timten";
             this.Timten.Size = new System.Drawing.Size(145, 26);
-            this.Timten.TabIndex = 9;
+            this.Timten.TabIndex = 8;
             this.Timten.TextChanged += new System.EventHandler(this.Timten_TextChanged);
             // 
             // label9
@@ -355,7 +355,7 @@ namespace QLtietkiem
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(278, 25);
             this.label7.TabIndex = 0;
-            this.label7.Text = "TÌM KIẾM LOẠI TIẾT KIẾM";
+            this.label7.Text = "TÌM KIẾM LOẠI TIẾT KIỆM";
             // 
             // panel4
             // 
@@ -399,7 +399,7 @@ namespace QLtietkiem
             this.Kyhan.Margin = new System.Windows.Forms.Padding(4);
             this.Kyhan.Name = "Kyhan";
             this.Kyhan.Size = new System.Drawing.Size(187, 28);
-            this.Kyhan.TabIndex = 15;
+            this.Kyhan.TabIndex = 4;
             // 
             // label10
             // 

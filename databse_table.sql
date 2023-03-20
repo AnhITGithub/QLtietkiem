@@ -72,8 +72,10 @@ CREATE TABLE tblSotietkiem
 
 ALTER TABLE tblSotietkiem ADD CONSTRAINT FK_Sotietkiem_KhachHang FOREIGN KEY (sMaKH) REFERENCES tblKhachHang(sMaKH);
 ALTER TABLE tblSotietkiem ADD CONSTRAINT FK_Sotietkiem_Loaitietkiem FOREIGN KEY (sMaLoaiTK) REFERENCES tblLoaitietkiem(sMaLoaiTK);
+ALTER TABLE tblSotietkiem ADD CONSTRAINT FK_Sotietkiem_Nhanvien FOREIGN KEY (sMaNV) REFERENCES tblNhanVien(sMaNV);
 
-select sMaSoTK,sMaKH,sTenKH,sMaLoaiTK,sTenLoaiTK,sSotiengui,sNgaygui
+
+select sMaSoTK,sMaKH,sTenKH,sMaLoaiTK,sTenLoaiTK,sSotiengui,sNgaygui,sMaNV,sTenNV
 from tblSotietkiem
 
 insert into tblSotietkiem(sMaSoTK,sMaKH,sTenKH,sMaLoaiTK,sTenLoaiTK,sSotiengui,sNgaygui)
@@ -94,8 +96,7 @@ CREATE TABLE tblHoaDon
 	sTienlai NVARCHAR (50) NOT NULL,
 	sTongtien NVARCHAR (50) NOT NULL,
 );	
-alter table tblHoaDon
-add sNgaylap datetime
+
 ALTER TABLE tblHoaDon ADD CONSTRAINT FK_HoaDon_Sotietkiem FOREIGN KEY (sMaSoTK) REFERENCES tblSotietkiem(sMaSoTK);
 ALTER TABLE tblHoaDon ADD CONSTRAINT FK_hoadon_nhanvien FOREIGN KEY (sMaNV) REFERENCES tblNhanVien(sMaNV)
 ALTER TABLE tblHoaDon ADD CONSTRAINT FK_hoadon_loaitietkiem FOREIGN KEY (sMaLoaiTK) REFERENCES tblLoaitietkiem(sMaLoaiTK)

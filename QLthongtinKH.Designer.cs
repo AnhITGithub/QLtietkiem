@@ -198,7 +198,7 @@ namespace QLtietkiem
             this.huy.Margin = new System.Windows.Forms.Padding(4);
             this.huy.Name = "huy";
             this.huy.Size = new System.Drawing.Size(89, 28);
-            this.huy.TabIndex = 28;
+            this.huy.TabIndex = 12;
             this.huy.Text = "LÀM MỚI";
             this.huy.UseVisualStyleBackColor = true;
             this.huy.Click += new System.EventHandler(this.lammoi_Click);
@@ -221,7 +221,7 @@ namespace QLtietkiem
             this.timMaKH.Margin = new System.Windows.Forms.Padding(4);
             this.timMaKH.Name = "timMaKH";
             this.timMaKH.Size = new System.Drawing.Size(143, 26);
-            this.timMaKH.TabIndex = 25;
+            this.timMaKH.TabIndex = 10;
             this.timMaKH.TextChanged += new System.EventHandler(this.timMaKH_TextChanged);
             // 
             // timTenKH
@@ -231,7 +231,7 @@ namespace QLtietkiem
             this.timTenKH.Margin = new System.Windows.Forms.Padding(4);
             this.timTenKH.Name = "timTenKH";
             this.timTenKH.Size = new System.Drawing.Size(141, 26);
-            this.timTenKH.TabIndex = 27;
+            this.timTenKH.TabIndex = 11;
             this.timTenKH.TextChanged += new System.EventHandler(this.timTenKH_TextChanged);
             // 
             // label9
@@ -294,7 +294,7 @@ namespace QLtietkiem
             this.txtGioitinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtGioitinh.Name = "txtGioitinh";
             this.txtGioitinh.Size = new System.Drawing.Size(183, 28);
-            this.txtGioitinh.TabIndex = 46;
+            this.txtGioitinh.TabIndex = 3;
             // 
             // label12
             // 
@@ -314,7 +314,7 @@ namespace QLtietkiem
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(179, 26);
-            this.txtSDT.TabIndex = 45;
+            this.txtSDT.TabIndex = 7;
             // 
             // label11
             // 
@@ -334,7 +334,7 @@ namespace QLtietkiem
             this.huyTTKH.Margin = new System.Windows.Forms.Padding(4);
             this.huyTTKH.Name = "huyTTKH";
             this.huyTTKH.Size = new System.Drawing.Size(100, 28);
-            this.huyTTKH.TabIndex = 42;
+            this.huyTTKH.TabIndex = 9;
             this.huyTTKH.Text = "HỦY";
             this.huyTTKH.UseVisualStyleBackColor = true;
             this.huyTTKH.Click += new System.EventHandler(this.huyTTKH_Click);
@@ -346,7 +346,7 @@ namespace QLtietkiem
             this.them.Margin = new System.Windows.Forms.Padding(4);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(100, 28);
-            this.them.TabIndex = 41;
+            this.them.TabIndex = 8;
             this.them.Text = "&THÊM";
             this.them.UseVisualStyleBackColor = true;
             this.them.Click += new System.EventHandler(this.them_Click);
@@ -359,7 +359,7 @@ namespace QLtietkiem
             this.txtNgaysinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtNgaysinh.Name = "txtNgaysinh";
             this.txtNgaysinh.Size = new System.Drawing.Size(179, 26);
-            this.txtNgaysinh.TabIndex = 40;
+            this.txtNgaysinh.TabIndex = 4;
             // 
             // label5
             // 
@@ -379,7 +379,7 @@ namespace QLtietkiem
             this.txtDiachi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(179, 26);
-            this.txtDiachi.TabIndex = 39;
+            this.txtDiachi.TabIndex = 6;
             // 
             // label10
             // 
@@ -410,7 +410,7 @@ namespace QLtietkiem
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(179, 26);
-            this.txtMaKH.TabIndex = 30;
+            this.txtMaKH.TabIndex = 1;
             // 
             // txtTenKH
             // 
@@ -419,7 +419,7 @@ namespace QLtietkiem
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(179, 26);
-            this.txtTenKH.TabIndex = 32;
+            this.txtTenKH.TabIndex = 2;
             // 
             // label6
             // 
@@ -439,7 +439,7 @@ namespace QLtietkiem
             this.txtCMT.Margin = new System.Windows.Forms.Padding(4);
             this.txtCMT.Name = "txtCMT";
             this.txtCMT.Size = new System.Drawing.Size(179, 26);
-            this.txtCMT.TabIndex = 36;
+            this.txtCMT.TabIndex = 5;
             // 
             // label3
             // 

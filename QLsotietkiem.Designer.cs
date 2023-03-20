@@ -31,6 +31,7 @@ namespace QLtietkiem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLsotietkiem));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bt_in = new System.Windows.Forms.Button();
@@ -61,14 +62,17 @@ namespace QLtietkiem
             this.ten_kh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTenNV = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbMaNV = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSTK)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,6 +85,16 @@ namespace QLtietkiem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1044, 90);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(20, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 63);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.back_Click);
             // 
             // label1
             // 
@@ -98,6 +112,8 @@ namespace QLtietkiem
             this.panel2.Controls.Add(this.bt_in);
             this.panel2.Controls.Add(this.bt_sua);
             this.panel2.Controls.Add(this.bt_xoa);
+            this.panel2.Controls.Add(this.bt_huy);
+            this.panel2.Controls.Add(this.bt_them);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 571);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -108,7 +124,7 @@ namespace QLtietkiem
             // bt_in
             // 
             this.bt_in.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_in.Location = new System.Drawing.Point(491, 22);
+            this.bt_in.Location = new System.Drawing.Point(464, 22);
             this.bt_in.Margin = new System.Windows.Forms.Padding(4);
             this.bt_in.Name = "bt_in";
             this.bt_in.Size = new System.Drawing.Size(100, 28);
@@ -120,7 +136,7 @@ namespace QLtietkiem
             // bt_sua
             // 
             this.bt_sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_sua.Location = new System.Drawing.Point(91, 22);
+            this.bt_sua.Location = new System.Drawing.Point(64, 22);
             this.bt_sua.Margin = new System.Windows.Forms.Padding(4);
             this.bt_sua.Name = "bt_sua";
             this.bt_sua.Size = new System.Drawing.Size(100, 28);
@@ -132,7 +148,7 @@ namespace QLtietkiem
             // bt_xoa
             // 
             this.bt_xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_xoa.Location = new System.Drawing.Point(291, 22);
+            this.bt_xoa.Location = new System.Drawing.Point(264, 22);
             this.bt_xoa.Margin = new System.Windows.Forms.Padding(4);
             this.bt_xoa.Name = "bt_xoa";
             this.bt_xoa.Size = new System.Drawing.Size(100, 28);
@@ -184,7 +200,7 @@ namespace QLtietkiem
             this.bt_huytk.Margin = new System.Windows.Forms.Padding(4);
             this.bt_huytk.Name = "bt_huytk";
             this.bt_huytk.Size = new System.Drawing.Size(122, 28);
-            this.bt_huytk.TabIndex = 21;
+            this.bt_huytk.TabIndex = 10;
             this.bt_huytk.Text = "LÀM MỚI";
             this.bt_huytk.UseVisualStyleBackColor = true;
             this.bt_huytk.Click += new System.EventHandler(this.bt_huytk_Click);
@@ -207,7 +223,7 @@ namespace QLtietkiem
             this.bt_timma.Margin = new System.Windows.Forms.Padding(4);
             this.bt_timma.Name = "bt_timma";
             this.bt_timma.Size = new System.Drawing.Size(114, 28);
-            this.bt_timma.TabIndex = 16;
+            this.bt_timma.TabIndex = 9;
             this.bt_timma.Text = "&TÌM KIẾM";
             this.bt_timma.UseVisualStyleBackColor = true;
             this.bt_timma.Click += new System.EventHandler(this.bt_timma_Click);
@@ -219,23 +235,25 @@ namespace QLtietkiem
             this.tim_masotk.Margin = new System.Windows.Forms.Padding(4);
             this.tim_masotk.Name = "tim_masotk";
             this.tim_masotk.Size = new System.Drawing.Size(184, 26);
-            this.tim_masotk.TabIndex = 18;
+            this.tim_masotk.TabIndex = 8;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.ten_loaitk);
+            this.panel4.Controls.Add(this.cbMaNV);
             this.panel4.Controls.Add(this.Ma_kh);
             this.panel4.Controls.Add(this.ma_loaitk);
             this.panel4.Controls.Add(this.ngay_gui);
             this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.bt_huy);
-            this.panel4.Controls.Add(this.bt_them);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.MaSo_tk);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.txtTenNV);
             this.panel4.Controls.Add(this.sotien_gui);
             this.panel4.Controls.Add(this.ten_kh);
             this.panel4.Controls.Add(this.label3);
@@ -250,48 +268,50 @@ namespace QLtietkiem
             // ten_loaitk
             // 
             this.ten_loaitk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ten_loaitk.Location = new System.Drawing.Point(207, 283);
+            this.ten_loaitk.Location = new System.Drawing.Point(217, 255);
             this.ten_loaitk.Name = "ten_loaitk";
             this.ten_loaitk.ReadOnly = true;
             this.ten_loaitk.Size = new System.Drawing.Size(185, 26);
-            this.ten_loaitk.TabIndex = 33;
+            this.ten_loaitk.TabIndex = 5;
             // 
             // Ma_kh
             // 
+            this.Ma_kh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Ma_kh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ma_kh.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Ma_kh.FormattingEnabled = true;
-            this.Ma_kh.Location = new System.Drawing.Point(207, 164);
+            this.Ma_kh.Location = new System.Drawing.Point(217, 136);
             this.Ma_kh.Name = "Ma_kh";
             this.Ma_kh.Size = new System.Drawing.Size(185, 28);
-            this.Ma_kh.TabIndex = 32;
+            this.Ma_kh.TabIndex = 2;
             this.Ma_kh.SelectedIndexChanged += new System.EventHandler(this.Ma_kh_SelectedIndexChanged);
             // 
             // ma_loaitk
             // 
+            this.ma_loaitk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ma_loaitk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ma_loaitk.ForeColor = System.Drawing.SystemColors.WindowText;
             this.ma_loaitk.FormattingEnabled = true;
-            this.ma_loaitk.Location = new System.Drawing.Point(207, 242);
+            this.ma_loaitk.Location = new System.Drawing.Point(217, 214);
             this.ma_loaitk.Name = "ma_loaitk";
             this.ma_loaitk.Size = new System.Drawing.Size(185, 28);
-            this.ma_loaitk.TabIndex = 31;
+            this.ma_loaitk.TabIndex = 3;
             this.ma_loaitk.SelectedIndexChanged += new System.EventHandler(this.ma_loaitk_SelectedIndexChanged);
             // 
             // ngay_gui
             // 
             this.ngay_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ngay_gui.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngay_gui.Location = new System.Drawing.Point(207, 360);
+            this.ngay_gui.Location = new System.Drawing.Point(217, 332);
             this.ngay_gui.Name = "ngay_gui";
             this.ngay_gui.Size = new System.Drawing.Size(185, 26);
-            this.ngay_gui.TabIndex = 30;
+            this.ngay_gui.TabIndex = 5;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(132, 47);
+            this.label11.Location = new System.Drawing.Point(140, 47);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(145, 23);
@@ -301,11 +321,11 @@ namespace QLtietkiem
             // bt_huy
             // 
             this.bt_huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_huy.Location = new System.Drawing.Point(292, 429);
+            this.bt_huy.Location = new System.Drawing.Point(931, 22);
             this.bt_huy.Margin = new System.Windows.Forms.Padding(4);
             this.bt_huy.Name = "bt_huy";
             this.bt_huy.Size = new System.Drawing.Size(100, 28);
-            this.bt_huy.TabIndex = 27;
+            this.bt_huy.TabIndex = 7;
             this.bt_huy.Text = "LÀM MỚI";
             this.bt_huy.UseVisualStyleBackColor = true;
             this.bt_huy.Click += new System.EventHandler(this.bt_huy_Click);
@@ -313,11 +333,11 @@ namespace QLtietkiem
             // bt_them
             // 
             this.bt_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_them.Location = new System.Drawing.Point(17, 429);
+            this.bt_them.Location = new System.Drawing.Point(656, 22);
             this.bt_them.Margin = new System.Windows.Forms.Padding(4);
             this.bt_them.Name = "bt_them";
             this.bt_them.Size = new System.Drawing.Size(100, 28);
-            this.bt_them.TabIndex = 26;
+            this.bt_them.TabIndex = 6;
             this.bt_them.Text = "&THÊM";
             this.bt_them.UseVisualStyleBackColor = true;
             this.bt_them.Click += new System.EventHandler(this.bt_them_Click);
@@ -326,7 +346,7 @@ namespace QLtietkiem
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 286);
+            this.label7.Location = new System.Drawing.Point(22, 258);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(132, 20);
@@ -337,7 +357,7 @@ namespace QLtietkiem
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 245);
+            this.label5.Location = new System.Drawing.Point(23, 217);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 20);
@@ -348,7 +368,7 @@ namespace QLtietkiem
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 366);
+            this.label10.Location = new System.Drawing.Point(23, 338);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 20);
@@ -359,7 +379,7 @@ namespace QLtietkiem
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 127);
+            this.label2.Location = new System.Drawing.Point(23, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 20);
@@ -369,17 +389,17 @@ namespace QLtietkiem
             // MaSo_tk
             // 
             this.MaSo_tk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaSo_tk.Location = new System.Drawing.Point(207, 124);
+            this.MaSo_tk.Location = new System.Drawing.Point(217, 96);
             this.MaSo_tk.Margin = new System.Windows.Forms.Padding(4);
             this.MaSo_tk.Name = "MaSo_tk";
             this.MaSo_tk.Size = new System.Drawing.Size(185, 26);
-            this.MaSo_tk.TabIndex = 14;
+            this.MaSo_tk.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 323);
+            this.label6.Location = new System.Drawing.Point(23, 295);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 20);
@@ -389,27 +409,27 @@ namespace QLtietkiem
             // sotien_gui
             // 
             this.sotien_gui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sotien_gui.Location = new System.Drawing.Point(207, 320);
+            this.sotien_gui.Location = new System.Drawing.Point(217, 292);
             this.sotien_gui.Margin = new System.Windows.Forms.Padding(4);
             this.sotien_gui.Name = "sotien_gui";
             this.sotien_gui.Size = new System.Drawing.Size(185, 26);
-            this.sotien_gui.TabIndex = 20;
+            this.sotien_gui.TabIndex = 4;
             // 
             // ten_kh
             // 
             this.ten_kh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ten_kh.Location = new System.Drawing.Point(207, 208);
+            this.ten_kh.Location = new System.Drawing.Point(217, 180);
             this.ten_kh.Margin = new System.Windows.Forms.Padding(4);
             this.ten_kh.Name = "ten_kh";
             this.ten_kh.ReadOnly = true;
             this.ten_kh.Size = new System.Drawing.Size(185, 26);
-            this.ten_kh.TabIndex = 18;
+            this.ten_kh.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 167);
+            this.label3.Location = new System.Drawing.Point(23, 139);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 20);
@@ -420,22 +440,56 @@ namespace QLtietkiem
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 210);
+            this.label4.Location = new System.Drawing.Point(23, 182);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(161, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "TÊN KHÁCH HÀNG";
             // 
-            // pictureBox1
+            // label9
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(20, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 63);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.back_Click);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(23, 379);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "MÃ NV LẬP";
+            // 
+            // txtTenNV
+            // 
+            this.txtTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNV.Location = new System.Drawing.Point(217, 419);
+            this.txtTenNV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.ReadOnly = true;
+            this.txtTenNV.Size = new System.Drawing.Size(185, 26);
+            this.txtTenNV.TabIndex = 4;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(23, 422);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(107, 20);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "TÊN NV LẬP";
+            // 
+            // cbMaNV
+            // 
+            this.cbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaNV.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cbMaNV.FormattingEnabled = true;
+            this.cbMaNV.Location = new System.Drawing.Point(217, 376);
+            this.cbMaNV.Name = "cbMaNV";
+            this.cbMaNV.Size = new System.Drawing.Size(185, 28);
+            this.cbMaNV.TabIndex = 2;
+            this.cbMaNV.SelectedIndexChanged += new System.EventHandler(this.manv_selectedindexchange);
             // 
             // QLsotietkiem
             // 
@@ -452,6 +506,7 @@ namespace QLtietkiem
             this.Load += new System.EventHandler(this.QLsotietkiem_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSTK)).EndInit();
@@ -459,7 +514,6 @@ namespace QLtietkiem
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -498,5 +552,9 @@ namespace QLtietkiem
         private System.Windows.Forms.TextBox ten_loaitk;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbMaNV;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtTenNV;
     }
 }

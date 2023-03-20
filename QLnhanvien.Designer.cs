@@ -121,7 +121,7 @@ namespace QLtietkiem
             this.txtSDT.Location = new System.Drawing.Point(33, 361);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(198, 26);
-            this.txtSDT.TabIndex = 4;
+            this.txtSDT.TabIndex = 5;
             // 
             // label13
             // 
@@ -139,7 +139,7 @@ namespace QLtietkiem
             this.textboxTK.Location = new System.Drawing.Point(33, 245);
             this.textboxTK.Name = "textboxTK";
             this.textboxTK.Size = new System.Drawing.Size(198, 26);
-            this.textboxTK.TabIndex = 6;
+            this.textboxTK.TabIndex = 3;
             // 
             // label14
             // 
@@ -157,7 +157,7 @@ namespace QLtietkiem
             this.txtMK.Location = new System.Drawing.Point(33, 305);
             this.txtMK.Name = "txtMK";
             this.txtMK.Size = new System.Drawing.Size(198, 26);
-            this.txtMK.TabIndex = 8;
+            this.txtMK.TabIndex = 4;
             // 
             // label15
             // 
@@ -185,7 +185,7 @@ namespace QLtietkiem
             this.txtDiachi.Location = new System.Drawing.Point(33, 424);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(198, 26);
-            this.txtDiachi.TabIndex = 4;
+            this.txtDiachi.TabIndex = 6;
             // 
             // them
             // 
@@ -195,7 +195,7 @@ namespace QLtietkiem
             this.them.Location = new System.Drawing.Point(272, 485);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(111, 39);
-            this.them.TabIndex = 9;
+            this.them.TabIndex = 8;
             this.them.Text = "Thêm";
             this.them.UseVisualStyleBackColor = true;
             this.them.Click += new System.EventHandler(this.them_Click);
@@ -221,7 +221,7 @@ namespace QLtietkiem
             this.xoa.Location = new System.Drawing.Point(725, 485);
             this.xoa.Name = "xoa";
             this.xoa.Size = new System.Drawing.Size(111, 39);
-            this.xoa.TabIndex = 9;
+            this.xoa.TabIndex = 10;
             this.xoa.Text = "Xoá";
             this.xoa.UseVisualStyleBackColor = true;
             this.xoa.Click += new System.EventHandler(this.xoa_Click);
@@ -234,7 +234,7 @@ namespace QLtietkiem
             this.print.Location = new System.Drawing.Point(919, 485);
             this.print.Name = "print";
             this.print.Size = new System.Drawing.Size(111, 39);
-            this.print.TabIndex = 9;
+            this.print.TabIndex = 11;
             this.print.Text = "In";
             this.print.UseVisualStyleBackColor = true;
             this.print.Click += new System.EventHandler(this.print_Click);
@@ -247,7 +247,7 @@ namespace QLtietkiem
             this.lammoi.Location = new System.Drawing.Point(34, 485);
             this.lammoi.Name = "lammoi";
             this.lammoi.Size = new System.Drawing.Size(111, 39);
-            this.lammoi.TabIndex = 10;
+            this.lammoi.TabIndex = 7;
             this.lammoi.Text = "Làm mới";
             this.lammoi.UseVisualStyleBackColor = true;
             this.lammoi.Click += new System.EventHandler(this.lammoi_Click);
@@ -268,7 +268,7 @@ namespace QLtietkiem
             this.txtMaNV.Location = new System.Drawing.Point(33, 116);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(198, 26);
-            this.txtMaNV.TabIndex = 2;
+            this.txtMaNV.TabIndex = 1;
             // 
             // label18
             // 
@@ -286,7 +286,7 @@ namespace QLtietkiem
             this.txtSearch.Location = new System.Drawing.Point(813, 82);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(217, 26);
-            this.txtSearch.TabIndex = 2;
+            this.txtSearch.TabIndex = 12;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // back

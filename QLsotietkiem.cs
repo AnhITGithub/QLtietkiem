@@ -17,6 +17,7 @@ namespace QLtietkiem
         {
             InitializeComponent();
             hienSTK(dataGridViewSTK);
+            
         }
 
 
@@ -55,23 +56,40 @@ namespace QLtietkiem
             Ma_kh.DataSource = dt;
             mycon.Close();
         }
+
+        void load_cbMaNV()
+        {
+            mycon = new SqlConnection(sqlcon);
+            mycon.Open();
+            var com = new SqlCommand("load_cbMaNV", mycon);
+            com.CommandType = CommandType.StoredProcedure;
+            var dr = com.ExecuteReader();
+            dt = new DataTable();
+            dt.Load(dr);
+            dr.Dispose();
+            cbMaNV.DisplayMember = "sMaNV";
+            cbMaNV.DataSource = dt;
+            mycon.Close();
+        }
         private void hienSTK(DataGridView dataGridViewSTK)
         {
 
-            string chuoi = @"select sMaSoTK,sMaKH,sTenKH,sMaLoaiTK,sTenLoaiTK,sSotiengui,sNgaygui
+            string chuoi = @"select sMaSoTK,sMaKH,sTenKH,sMaLoaiTK,sTenLoaiTK,sSotiengui,sNgaygui,sMaNV,sTenNV
                             from tblSotietkiem";
             ad = new SqlDataAdapter(chuoi, sqlcon);
             dt = new DataTable();
             ad.Fill(dt);
             dataGridViewSTK.DataSource = dt;
-            dataGridViewSTK.Columns[0].HeaderText = "MÃ SỔ TK";
-            dataGridViewSTK.Columns[1].HeaderText = "MÃ KH";
-            dataGridViewSTK.Columns[2].HeaderText = "TÊN KH";
-            dataGridViewSTK.Columns[3].HeaderText = "MÃ LOẠI TK";
-            dataGridViewSTK.Columns[4].HeaderText = "LOẠI TK";
+            dataGridViewSTK.Columns[0].HeaderText = "MÃ SỔ TÀI KHOẢN";
+            dataGridViewSTK.Columns[1].HeaderText = "MÃ KHÁCH HÀNG";
+            dataGridViewSTK.Columns[2].HeaderText = "TÊN KHÁCH HÀNG";
+            dataGridViewSTK.Columns[3].HeaderText = "MÃ LOẠI TIẾT KIỆM";
+            dataGridViewSTK.Columns[4].HeaderText = "LOẠI TIẾT KIỆM";
             dataGridViewSTK.Columns[5].HeaderText = "SỔ TIỀN GỬI";
             dataGridViewSTK.Columns[6].HeaderText = "NGÀY GỬI";
-            
+            dataGridViewSTK.Columns[7].HeaderText = "MÃ NHÂN VIÊN LẬP";
+            dataGridViewSTK.Columns[8].HeaderText = "TÊN NHÂN VIÊN LẬP";
+
         }
 
         private void bt_them_Click(object sender, EventArgs e)
@@ -103,14 +121,16 @@ namespace QLtietkiem
                     return;
                 }
 
-                string sql1 = "insert into tblSotietkiem(sMaSoTK,sMaKH,sTenKH,sMaLoaiTK,sTenLoaiTK,sSotiengui,sNgaygui)" +
+                string sql1 = "insert into tblSotietkiem(sMaSoTK,sMaKH,sTenKH,sMaLoaiTK,sTenLoaiTK,sSotiengui,sNgaygui,sMaNV,sTenNV)" +
                 "values('"+MaSo_tk.Text.Trim()+"'," +
                 "'"+Ma_kh.Text.Trim()+"'," +
                 "N'"+ten_kh.Text.Trim()+"'," +
                 "'"+ma_loaitk.Text.Trim()+"'," +
                 "N'"+ten_loaitk.Text.Trim()+"'," +
                 "'"+sotien_gui.Text.Trim()+"'," +
-                "'"+DateTime.Parse(ngay_gui.Text.Trim())+"')";
+                "'"+DateTime.Parse(ngay_gui.Text.Trim())+"'," +
+                "'"+cbMaNV.Text.Trim()+"'," +
+                "'"+txtTenNV.Text.Trim()+"')";
                 mycon = new SqlConnection(sqlcon);
                 com = new SqlCommand(sql1, mycon);
                  ad = new SqlDataAdapter(com);
@@ -133,6 +153,8 @@ namespace QLtietkiem
             ma_loaitk.Text = "";
             ten_loaitk.Clear();
             ngay_gui.Refresh();
+            cbMaNV.Text = "";
+            txtTenNV.Clear();
             MaSo_tk.Focus();
         }
 
@@ -146,6 +168,8 @@ namespace QLtietkiem
             ten_loaitk.Text = dataGridViewSTK.Rows[curow].Cells[4].Value.ToString();
             sotien_gui.Text = dataGridViewSTK.Rows[curow].Cells[5].Value.ToString();
             ngay_gui.Text = dataGridViewSTK.Rows[curow].Cells[6].Value.ToString();
+            cbMaNV.Text = dataGridViewSTK.Rows[curow].Cells[7].Value.ToString();
+            txtTenNV.Text = dataGridViewSTK.Rows[curow].Cells[8].Value.ToString();
             
         }
         private void bt_sua_Click(object sender, EventArgs e)
@@ -158,7 +182,9 @@ namespace QLtietkiem
                 "sMaLoaiTK='"+ma_loaitk.Text.Trim()+"'," +
                 "sTenLoaiTK=N'"+ten_loaitk.Text.Trim()+"'," +
                 "sSotiengui='"+sotien_gui.Text.Trim()+"'," +
-                "sNgaygui='"+DateTime.Parse(ngay_gui.Text.Trim())+"'" +
+                "sNgaygui='"+DateTime.Parse(ngay_gui.Text.Trim())+"'," +
+                "sMaNV='"+cbMaNV.Text.Trim()+"'," +
+                "sTenNV=N'"+txtTenNV.Text.Trim()+"'" +
                 "where sMaSoTK='"+ MaSo_tk.Text.Trim() + "'";
             try
             {
@@ -213,8 +239,10 @@ namespace QLtietkiem
 
         private void QLsotietkiem_Load(object sender, EventArgs e)
         {
+            load_cbMaNV();
             load_cbMaKH();
             load_cbLoaiTK();
+         
         }
 
         private void bt_in_Click(object sender, EventArgs e)
@@ -222,7 +250,7 @@ namespace QLtietkiem
             //kết xuất nguồn dữ liệu cho Report
             mycon = new SqlConnection(sqlcon);
             mycon.Open();
-            string sql = @"select sMaSoTK,sMaKH,sTenKH,sMaLoaiTK,sTenLoaiTK,sSotiengui,sNgaygui
+            string sql = @"select sMaSoTK,sMaKH,sTenKH,sMaLoaiTK,sTenLoaiTK,sSotiengui,sNgaygui,sMaNV,sTenNV
                             from tblSotietkiem ";
             com = new SqlCommand(sql, mycon);
             ad.SelectCommand = com;
@@ -274,6 +302,23 @@ namespace QLtietkiem
             index view=new index();
             view.Show();
             this.Hide();
+        }
+
+        private void manv_selectedindexchange(object sender, EventArgs e)
+        {
+            mycon = new SqlConnection(sqlcon);
+            mycon.Open();
+            com = mycon.CreateCommand();
+            com.CommandType = CommandType.Text;
+            com.CommandText = "select * from tblNhanVien where sMaNV='" + cbMaNV.Text.Trim() + "'";
+            com.ExecuteNonQuery();
+            dt = new DataTable();
+            ad = new SqlDataAdapter(com);
+            ad.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                txtTenNV.Text = dr["sTenNV"].ToString();
+            }
         }
     }
 }

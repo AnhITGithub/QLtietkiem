@@ -1,15 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLtietkiem" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-7N23OPA\HQTCSDL;Initial Catalog=QLtietkiem;Integrated Security=True" SettingsObjectName="QLtietkiem.Properties.Settings" SettingsPropertyName="QLtietkiemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblHoaDon" Member="tblHoaDons">
+    <Type Name="tblHoaDon">
+      <Column Name="sMaHD" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sMaSoTK" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sTenKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sSotiengui" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sTienlai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sTongtien" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sMaNV" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="sMaKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sMaLoaiTK" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sTenLoaiTK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sKyhan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sPhantram" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sNgaygui" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sNgaylap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sTenNV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblKhachHang_tblHoaDon" Member="tblKhachHang" ThisKey="sMaKH" OtherKey="sMaKH" Type="tblKhachHang" IsForeignKey="true" />
+      <Association Name="tblLoaitietkiem_tblHoaDon" Member="tblLoaitietkiem" ThisKey="sMaLoaiTK" OtherKey="sMaLoaiTK" Type="tblLoaitietkiem" IsForeignKey="true" />
+      <Association Name="tblNhanVien_tblHoaDon" Member="tblNhanVien" ThisKey="sMaNV" OtherKey="sMaNV" Type="tblNhanVien" IsForeignKey="true" />
+      <Association Name="tblSotietkiem_tblHoaDon" Member="tblSotietkiem" ThisKey="sMaSoTK" OtherKey="sMaSoTK" Type="tblSotietkiem" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tblKhachHang" Member="tblKhachHangs">
     <Type Name="tblKhachHang">
       <Column Name="sMaKH" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="sTenKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="sGioitinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="tNgaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="tNgaysinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="sCMT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="sDiachi" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="sSDT" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblKhachHang_tblHoaDon" Member="tblHoaDons" ThisKey="sMaKH" OtherKey="sMaKH" Type="tblHoaDon" />
       <Association Name="tblKhachHang_tblSotietkiem" Member="tblSotietkiems" ThisKey="sMaKH" OtherKey="sMaKH" Type="tblSotietkiem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLoaitietkiem" Member="tblLoaitietkiems">
+    <Type Name="tblLoaitietkiem">
+      <Column Name="sMaLoaiTK" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sTenLoaiTK" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sPhantram" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sKyhan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="tblLoaitietkiem_tblHoaDon" Member="tblHoaDons" ThisKey="sMaLoaiTK" OtherKey="sMaLoaiTK" Type="tblHoaDon" />
+      <Association Name="tblLoaitietkiem_tblSotietkiem" Member="tblSotietkiems" ThisKey="sMaLoaiTK" OtherKey="sMaLoaiTK" Type="tblSotietkiem" />
     </Type>
   </Table>
   <Table Name="dbo.tblNhanVien" Member="tblNhanViens">
@@ -20,15 +54,8 @@
       <Column Name="sMatKhau" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="sSDT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="sDiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblLoaitietkiem" Member="tblLoaitietkiems">
-    <Type Name="tblLoaitietkiem">
-      <Column Name="sMaLoaiTK" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="sTenLoaiTK" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="sPhantram" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="sKyhan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="tblLoaitietkiem_tblSotietkiem" Member="tblSotietkiems" ThisKey="sMaLoaiTK" OtherKey="sMaLoaiTK" Type="tblSotietkiem" />
+      <Association Name="tblNhanVien_tblHoaDon" Member="tblHoaDons" ThisKey="sMaNV" OtherKey="sMaNV" Type="tblHoaDon" />
+      <Association Name="tblNhanVien_tblSotietkiem" Member="tblSotietkiems" ThisKey="sMaNV" OtherKey="sMaNV" Type="tblSotietkiem" />
     </Type>
   </Table>
   <Table Name="dbo.tblSotietkiem" Member="tblSotietkiems">
@@ -40,8 +67,12 @@
       <Column Name="sNgaygui" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="sTenLoaiTK" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="sMaLoaiTK" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sMaNV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="sTenNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblSotietkiem_tblHoaDon" Member="tblHoaDons" ThisKey="sMaSoTK" OtherKey="sMaSoTK" Type="tblHoaDon" />
       <Association Name="tblKhachHang_tblSotietkiem" Member="tblKhachHang" ThisKey="sMaKH" OtherKey="sMaKH" Type="tblKhachHang" IsForeignKey="true" />
       <Association Name="tblLoaitietkiem_tblSotietkiem" Member="tblLoaitietkiem" ThisKey="sMaLoaiTK" OtherKey="sMaLoaiTK" Type="tblLoaitietkiem" IsForeignKey="true" />
+      <Association Name="tblNhanVien_tblSotietkiem" Member="tblNhanVien" ThisKey="sMaNV" OtherKey="sMaNV" Type="tblNhanVien" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -89,35 +89,44 @@ namespace QLtietkiem
             // 
             // txtTK
             // 
+            this.txtTK.BackColor = System.Drawing.SystemColors.Window;
             this.txtTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTK.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtTK.Location = new System.Drawing.Point(366, 139);
             this.txtTK.Margin = new System.Windows.Forms.Padding(4);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(350, 34);
-            this.txtTK.TabIndex = 3;
+            this.txtTK.TabIndex = 1;
+            this.txtTK.Text = "Nhập tài khoản";
             this.txtTK.TextChanged += new System.EventHandler(this.txtTK_TextChanged);
+            this.txtTK.Enter += new System.EventHandler(this.txtTK_Enter);
+            this.txtTK.Leave += new System.EventHandler(this.txtTK_Leave);
             // 
             // txtMK
             // 
+            this.txtMK.BackColor = System.Drawing.SystemColors.Window;
             this.txtMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMK.Location = new System.Drawing.Point(366, 219);
             this.txtMK.Margin = new System.Windows.Forms.Padding(4);
             this.txtMK.Name = "txtMK";
             this.txtMK.PasswordChar = '*';
             this.txtMK.Size = new System.Drawing.Size(350, 34);
-            this.txtMK.TabIndex = 4;
+            this.txtMK.TabIndex = 2;
+            this.txtMK.Text = "Nhập mật khẩu";
             this.txtMK.TextChanged += new System.EventHandler(this.txtMK_TextChanged);
+            this.txtMK.Enter += new System.EventHandler(this.txtMK_Enter);
+            this.txtMK.Leave += new System.EventHandler(this.txtMK_Leave);
             // 
             // bt_login
             // 
             this.bt_login.BackColor = System.Drawing.Color.Chartreuse;
             this.bt_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_login.ForeColor = System.Drawing.Color.Black;
-            this.bt_login.Location = new System.Drawing.Point(366, 278);
+            this.bt_login.Location = new System.Drawing.Point(366, 288);
             this.bt_login.Margin = new System.Windows.Forms.Padding(4);
             this.bt_login.Name = "bt_login";
             this.bt_login.Size = new System.Drawing.Size(350, 38);
-            this.bt_login.TabIndex = 5;
+            this.bt_login.TabIndex = 3;
             this.bt_login.Text = "Đăng Nhập";
             this.bt_login.UseVisualStyleBackColor = false;
             this.bt_login.Click += new System.EventHandler(this.bt_login_Click);
@@ -133,7 +142,7 @@ namespace QLtietkiem
             this.label4.Location = new System.Drawing.Point(362, 344);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 20);
-            this.label4.TabIndex = 7;
+            this.label4.TabIndex = 4;
             this.label4.Text = "Quên mật khẩu ?";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 

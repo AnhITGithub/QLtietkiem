@@ -126,5 +126,24 @@ namespace QLtietkiem
                 singalMK.ForeColor = System.Drawing.Color.Red;
             }
         }
+
+        private void txtTK_Leave(object sender, EventArgs e)
+        {
+            if (txtTK.Text == "")
+            {
+                txtTK.Text = "Nhập tài khoản đã được cấp";
+                txtTK.ForeColor = Color.Silver;
+
+            }
+        }
+
+        private void txtTK_Enter(object sender, EventArgs e)
+        {
+            if(txtTK.Text== "Nhập tài khoản đã được cấp")
+            {
+                txtTK.Text = "";
+                txtTK.ForeColor = Color.Black;
+            }
+        }
     }
 }

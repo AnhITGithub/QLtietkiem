@@ -50,7 +50,7 @@
             this.confirmMK.Name = "confirmMK";
             this.confirmMK.PasswordChar = '*';
             this.confirmMK.Size = new System.Drawing.Size(350, 34);
-            this.confirmMK.TabIndex = 10;
+            this.confirmMK.TabIndex = 3;
             this.confirmMK.KeyUp += new System.Windows.Forms.KeyEventHandler(this.confirmMK_KeyUp);
             // 
             // newMK
@@ -61,7 +61,7 @@
             this.newMK.Name = "newMK";
             this.newMK.PasswordChar = '*';
             this.newMK.Size = new System.Drawing.Size(350, 34);
-            this.newMK.TabIndex = 9;
+            this.newMK.TabIndex = 2;
             // 
             // label3
             // 
@@ -122,12 +122,16 @@
             // txtTK
             // 
             this.txtTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTK.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtTK.Location = new System.Drawing.Point(241, 70);
             this.txtTK.Margin = new System.Windows.Forms.Padding(4);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(350, 34);
-            this.txtTK.TabIndex = 9;
+            this.txtTK.TabIndex = 1;
+            this.txtTK.Text = "Nhập tài khoản đã được cấp";
+            this.txtTK.Enter += new System.EventHandler(this.txtTK_Enter);
             this.txtTK.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtTK_KeyUp);
+            this.txtTK.Leave += new System.EventHandler(this.txtTK_Leave);
             // 
             // change
             // 
@@ -138,7 +142,7 @@
             this.change.Margin = new System.Windows.Forms.Padding(4);
             this.change.Name = "change";
             this.change.Size = new System.Drawing.Size(350, 38);
-            this.change.TabIndex = 11;
+            this.change.TabIndex = 4;
             this.change.Text = "Cập Nhật";
             this.change.UseVisualStyleBackColor = false;
             this.change.Click += new System.EventHandler(this.change_Click);

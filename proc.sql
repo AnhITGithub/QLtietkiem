@@ -166,7 +166,7 @@ BEGIN
 END
 
 CREATE PROCEDURE tblHoaDon_DELETE 
-	@sMaHD nvarchar(50),
+	@sMaHD nvarchar(50)
 AS 
 BEGIN
 	DELETE 
@@ -188,4 +188,11 @@ as
 begin
 	select sMaKH
 	from tblKhachHang
+end
+
+alter proc load_cbMaNV
+as
+begin
+	select *
+	from tblNhanVien
 end

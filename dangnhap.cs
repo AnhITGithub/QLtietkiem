@@ -127,5 +127,41 @@ namespace QLtietkiem
                 bt_login_Click(sender, e);
             }
         }
+
+        private void txtTK_Enter(object sender, EventArgs e)
+        {
+            if(txtTK.Text=="Nhập tài khoản")
+            {
+                txtTK.Text = "";
+                txtTK.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtTK_Leave(object sender, EventArgs e)
+        {
+            if (txtTK.Text == "")
+            {
+                txtTK.Text = "Nhập tài khoản";
+                txtTK.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtMK_Leave(object sender, EventArgs e)
+        {
+            if (txtMK.Text == "")
+            {
+                txtMK.Text = "Nhập mật khẩu";
+                txtMK.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtMK_Enter(object sender, EventArgs e)
+        {
+            if (txtMK.Text == "Nhập mật khẩu")
+            {
+                txtMK.Text = "";
+                txtMK.ForeColor = Color.Black;
+            }
+        }
     }
 }

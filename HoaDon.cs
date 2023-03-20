@@ -385,5 +385,11 @@ namespace QLtietkiem
              
             }
         }
+
+        private void tim_TextChanged(object sender, EventArgs e)
+        {
+            string rowFilter = string.Format("{0} like '{1}'", "sMaHD", "*" + tim.Text + "*");
+            (dataGridViewHD.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
+        }
     }
 }

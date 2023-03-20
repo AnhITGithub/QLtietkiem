@@ -13,8 +13,8 @@ namespace QLtietkiem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoadingProgress());
-            Application.Run(new HoaDon());
+            Application.Run(new LoadingProgress());
+           
         }
     }
 }

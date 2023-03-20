@@ -293,6 +293,10 @@ namespace QLtietkiem {
             
             private global::System.Data.DataColumn columnsNgaygui;
             
+            private global::System.Data.DataColumn columnsMaNV;
+            
+            private global::System.Data.DataColumn columnsTenNV;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tblSotietkiemDataTable() {
@@ -384,6 +388,22 @@ namespace QLtietkiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn sMaNVColumn {
+                get {
+                    return this.columnsMaNV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn sTenNVColumn {
+                get {
+                    return this.columnsTenNV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -419,7 +439,7 @@ namespace QLtietkiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public tblSotietkiemRow AddtblSotietkiemRow(string sMaSoTK, string sMaKH, string sTenKH, string sMaLoaiTK, string sTenLoaiTK, string sSotiengui, string sNgaygui) {
+            public tblSotietkiemRow AddtblSotietkiemRow(string sMaSoTK, string sMaKH, string sTenKH, string sMaLoaiTK, string sTenLoaiTK, string sSotiengui, string sNgaygui, string sMaNV, string sTenNV) {
                 tblSotietkiemRow rowtblSotietkiemRow = ((tblSotietkiemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         sMaSoTK,
@@ -428,7 +448,9 @@ namespace QLtietkiem {
                         sMaLoaiTK,
                         sTenLoaiTK,
                         sSotiengui,
-                        sNgaygui};
+                        sNgaygui,
+                        sMaNV,
+                        sTenNV};
                 rowtblSotietkiemRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblSotietkiemRow);
                 return rowtblSotietkiemRow;
@@ -458,6 +480,8 @@ namespace QLtietkiem {
                 this.columnsTenLoaiTK = base.Columns["sTenLoaiTK"];
                 this.columnsSotiengui = base.Columns["sSotiengui"];
                 this.columnsNgaygui = base.Columns["sNgaygui"];
+                this.columnsMaNV = base.Columns["sMaNV"];
+                this.columnsTenNV = base.Columns["sTenNV"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,6 +501,10 @@ namespace QLtietkiem {
                 base.Columns.Add(this.columnsSotiengui);
                 this.columnsNgaygui = new global::System.Data.DataColumn("sNgaygui", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsNgaygui);
+                this.columnsMaNV = new global::System.Data.DataColumn("sMaNV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsMaNV);
+                this.columnsTenNV = new global::System.Data.DataColumn("sTenNV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsTenNV);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -731,6 +759,38 @@ namespace QLtietkiem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string sMaNV {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblSotietkiem.sMaNVColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sMaNV\' in table \'tblSotietkiem\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblSotietkiem.sMaNVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string sTenNV {
+                get {
+                    try {
+                        return ((string)(this[this.tabletblSotietkiem.sTenNVColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sTenNV\' in table \'tblSotietkiem\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblSotietkiem.sTenNVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IssMaSoTKNull() {
                 return this.IsNull(this.tabletblSotietkiem.sMaSoTKColumn);
             }
@@ -811,6 +871,30 @@ namespace QLtietkiem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetsNgayguiNull() {
                 this[this.tabletblSotietkiem.sNgayguiColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IssMaNVNull() {
+                return this.IsNull(this.tabletblSotietkiem.sMaNVColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetsMaNVNull() {
+                this[this.tabletblSotietkiem.sMaNVColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IssTenNVNull() {
+                return this.IsNull(this.tabletblSotietkiem.sTenNVColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetsTenNVNull() {
+                this[this.tabletblSotietkiem.sTenNVColumn] = global::System.Convert.DBNull;
             }
         }
         
